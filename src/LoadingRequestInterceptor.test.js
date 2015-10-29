@@ -12,19 +12,19 @@ describe('LoadingRequestInterceptor', function () {
     responseError = {status: 500, config: {}}
   }))
 
-  it('sets requestLoading property', function () {
-    expect( $rootScope ).to.not.have.property('requestLoading')
+  it('sets loadingRequest property', function () {
+    expect( $rootScope ).to.not.have.property('loadingRequest')
     LoadingRequestInterceptor.request(request)
-    expect( $rootScope ).to.have.property('requestLoading').and.to.be.true
+    expect( $rootScope ).to.have.property('loadingRequest').and.to.be.true
   })
 
-  it('unsets requestLoading property when got response', function () {
+  it('unsets loadingRequest property when got response', function () {
     LoadingRequestInterceptor.response(response)
-    expect( $rootScope ).to.have.property('requestLoading').that.is.false
+    expect( $rootScope ).to.have.property('loadingRequest').that.is.false
   })
 
-  it('unsets requestLoading property when got failed response', function () {
+  it('unsets loadingRequest property when got failed response', function () {
     LoadingRequestInterceptor.responseError(responseError)
-    expect( $rootScope ).to.have.property('requestLoading').that.is.false
+    expect( $rootScope ).to.have.property('loadingRequest').that.is.false
   })
 })

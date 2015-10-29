@@ -9,7 +9,7 @@ function compose() {
   }
 }
 
-module.exports = ['$q','$rootScope',function LoadingRequestInterceptor($q, $rootScope){
+module.exports = ['$q','$rootScope','LoadingRequestInterceptorConfiguration',function LoadingRequestInterceptor($q, $rootScope, LoadingRequestInterceptorConfiguration){
   var pendingRequests = 0
   var outcomes = {
     SUCCESS: 0,
@@ -19,7 +19,7 @@ module.exports = ['$q','$rootScope',function LoadingRequestInterceptor($q, $root
   return {
     request: function(config){
       pendingRequests++
-      $rootScope.requestLoading = true
+      $rootScope[LoadingRequestInterceptorConfiguration.prefix] = true
       return config
     },
     response: compose(decrementPendingRequestsCount, handleResponseWith(outcomes.SUCCESS)),
@@ -31,7 +31,7 @@ module.exports = ['$q','$rootScope',function LoadingRequestInterceptor($q, $root
       pendingRequests--
     }
     if( pendingRequests === 0 ){
-      $rootScope.requestLoading = false
+      $rootScope[LoadingRequestInterceptorConfiguration.prefix] = false
     }
     return response
   }

@@ -23,8 +23,8 @@ gulp.task('build', function() {
   return browserifyStream.bundle()
     .pipe(source('angular-request-loading.min.js'))
     .pipe(umd({
-      exports: function(file) {return 'AngularRequestLoading'},
-      namespace: function(file) {return 'AngularRequestLoading'},
+      exports: function(file) {return 'AngularloadingRequest'},
+      namespace: function(file) {return 'AngularloadingRequest'},
     }))
     .pipe(buffer())
     .pipe(uglify())
