@@ -1,8 +1,8 @@
 {
   "name": "angular-request-loading",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
-  "main": "index.js",
+  "main": "dist/angular-request-loading.min.js",
   "scripts": {
     "test":  "gulp test",
     "build": "gulp build"
