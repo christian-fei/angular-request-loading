@@ -1,6 +1,8 @@
 angular-request-loading
 =======================
 
+[![Build Status](https://travis-ci.org/christian-fei/angular-request-loading.svg)](https://travis-ci.org/christian-fei/angular-request-loading)
+
 ```
 npm install --save angular-request-loading
 ```
