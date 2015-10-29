@@ -1,14 +1,14 @@
 {
   "name": "angular-request-loading",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test":  "gulp test",
     "build": "gulp build"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Christian",
+  "license": "none",
   "devDependencies": {
     "angular": "^1.4.7",
     "angular-mocks": "^1.4.7",
