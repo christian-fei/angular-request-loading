@@ -1,6 +1,6 @@
 {
   "name": "angular-request-loading",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "",
   "main": "dist/angular-request-loading.min.js",
   "scripts": {
