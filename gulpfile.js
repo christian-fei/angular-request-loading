@@ -24,7 +24,6 @@ gulp.task('build', function() {
     .pipe(source('angular-request-loading.min.js'))
     .pipe(umd({
       exports: function(file) {return 'AngularloadingRequest'},
-      namespace: function(file) {return 'AngularloadingRequest'},
     }))
     .pipe(buffer())
     .pipe(uglify())
