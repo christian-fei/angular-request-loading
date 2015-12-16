@@ -15,8 +15,8 @@ while resource are being fetched.
 ```
 angular.module('app', ['angular-request-loading'])
 .config(function(LoadingRequestInterceptorProvider, $httpProvider){
-  LoadingRequestInterceptorProvider.setPrefix('customPrefix')
-  LoadingRequestInterceptorProvider.blacklist(/blacklisted$/)
+  LoadingRequestInterceptorProvider.setPrefix('customPrefix') /* optional */
+  LoadingRequestInterceptorProvider.blacklist(/blacklisted$/) /* optional */
 
   $httpProvider.interceptors.push('LoadingRequestInterceptor')
 })
@@ -26,19 +26,6 @@ and in your views you can use it like this:
 
 ```
 <loader loading="loadingRequest"/>
-```
-
-# Configuration
-
-You can configure the module by injecting `LoadingRequestInterceptorProvider`
-in the config phase:
-
-```
-angular.module('app', ['angular-request-loading'])
-.config(function($httpProvider, LoadingRequestInterceptorProvider){
-  LoadingRequestInterceptorProvider.setPrefix('loadingRequest')
-  $httpProvider.interceptors.push('LoadingRequestInterceptor')
-})
 ```
 
 # UMD
