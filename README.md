@@ -14,7 +14,10 @@ while resource are being fetched.
 
 ```
 angular.module('app', ['angular-request-loading'])
-.config(function($httpProvider){
+.config(function(LoadingRequestInterceptorProvider, $httpProvider){
+  LoadingRequestInterceptorProvider.setPrefix('customPrefix')
+  LoadingRequestInterceptorProvider.blacklist(/blacklisted$/)
+
   $httpProvider.interceptors.push('LoadingRequestInterceptor')
 })
 ```

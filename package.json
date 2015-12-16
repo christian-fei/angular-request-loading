@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/angular-request-loading.min.js",
   "scripts": {
-    "test":  "gulp test",
+    "test": "gulp test",
     "build": "gulp build"
   },
   "author": "Christian",
@@ -28,5 +28,8 @@
     "phantomjs": "^1.9.18",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
+  },
+  "dependencies": {
+    "lodash.some": "^3.2.3"
   }
 }

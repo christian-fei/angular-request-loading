@@ -1,3 +1,4 @@
+var some = require('lodash.some')
 function compose() {
   var args = arguments
   var start = args.length - 1
@@ -16,8 +17,17 @@ module.exports = ['$q','$rootScope','LoadingRequestInterceptorConfiguration',fun
     FAILURE: 1,
   }
 
+  function isBlacklisted(url) {
+    return some(LoadingRequestInterceptorConfiguration.blacklist, function(rule) {
+      return rule.test(url)
+    })
+  }
+
   return {
     request: function(config){
+      if( isBlacklisted(config.url) ){
+        return config
+      }
       pendingRequests++
       $rootScope[LoadingRequestInterceptorConfiguration.prefix] = true
       return config
