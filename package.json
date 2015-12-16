@@ -1,11 +1,15 @@
 {
   "name": "angular-request-loading",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "",
   "main": "dist/angular-request-loading.min.js",
   "scripts": {
     "test": "gulp test",
     "build": "gulp build"
+  },
+  "repository":{
+    "type": "git",
+    "url": "https://github.com/christian-fei/angular-request-loading.git"
   },
   "author": "Christian",
   "license": "none",
